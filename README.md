@@ -1,7 +1,7 @@
 ### To start the program
 
 #### 1. Connect to the raspberry pi via bluetooth.
-ssh SEProject@[raspberry_pi_ip_address]
+ssh SEProject@[raspberry_pi_ip_address] 
 *Password is the same as the username (SEProject)*
 
 #### 2. Activate the conda environment
