@@ -42,6 +42,9 @@ async def forward_complete_message(message):
     """Parse and forward the complete message as JSON."""
     try:
         # Forward the parsed JSON object to the server
+        message_json = json.loads(message)
+        message_json['device_mac'] = address
+        message=json.dumps(message_json)
         await sio.emit('message', message)
         print("Forwarded complete JSON to the server.")
     except Exception as e:
@@ -62,8 +65,8 @@ def notification_handler(sender, data):
         print("Complete JSON message assembled, forwarding...")
         asyncio.create_task(forward_complete_message(message_buffer))
         message_buffer = ''  # Clear the buffer after forwarding
-    else:
-        print("Message fragment received, waiting for more data...")
+    # else:
+        # print("Message fragment received, waiting for more data...")
 
 async def listen_for_messages(address):
     global ble_client
