@@ -9,5 +9,5 @@ ssh SEProject@[raspberry_pi_ip_address]
 conda activate bluetooth
 
 #### 3. Navigate to the folder & Execute the script
-cd ~/bluetooth/Raspberry-Pi
+cd ~/bluetooth/Raspberry-Pi  
 python bluetooth.py
